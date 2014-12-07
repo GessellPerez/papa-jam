@@ -1,6 +1,6 @@
 <?php
 require('inc/conexion.php');
-$consulta="select * from cliente";
+$consulta="SELECT * from cliente";
 $resultado=$mysqli->query($consulta);
 ?>
 
@@ -33,6 +33,7 @@ $resultado=$mysqli->query($consulta);
       <ul class="nav nav-tabs nav-justified" role="tablist">
         <li role="presentacion" class="active"><a href="index.php">INCIO</a></li>
         <li role="presentacion" class="active"><a href="Tiposdepizza.php">CARTA</a></li>
+        <li role="presentacion" class="active"><a href="#">HISTORIAL DE PEDIDO</a></li>
         <li role="presentacion" class="active"><a href="#">PROMOCIONES</a></li>
         <li role="presentacion" class="active"><a href="#">GALERIA</a></li>
         <li role="presentacion" class="active"><a href="#">CONTACTANOS</a></li>
@@ -40,36 +41,50 @@ $resultado=$mysqli->query($consulta);
     </nav>
 
     <section>
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-6 form well">
-          <article class="Q">
-            <h1>QUIENES SOMOS</h1>
-            <P>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</P>
-          </article>
-          </div>
-            <div class="col-sm-5 col-sm-offset-1 form well">
-              <form role="Formulario" action="inc/susc.php" method="POST" nombre="nuevocliente">
-              <h1>SUSCRIBETE YA</h1>
-              <label for="nombre">Nombre</label>
-              <input for="Nombre" class="form-control" name="nombre" placeholder="Ingresar Nombre" required=""></label>
-              <label for="apellido">Apellido</label>
-              <input for="Apellido" class="form-control" name="apellido" placeholder="Ingresar Apellido" ></label>
-              <label for="telefono">Telefono</label>
-              <input for="Telefono" class="form-control" name="telefono" placeholder="Ingresar Telefono" ></label>
-              <label for="email">Email</label>
-              <input type="email" class="form-control" name="email" placeholder="Ingresar Email" >
-              <button type="submit" style="margin-top: 20px;"class="btn btn-default">SUSCRIPCION</button>
-              </form>
-             </div>
-          </div>
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-12 form well">
+              <article class="Q">
+                <h1>QUIENES SOMOS</h1>
+                <P>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</P>
+              </article>
+           </div>
+        </div>
       </div>
     </section>
+
+    <div class="modal fade"id="modal-usuario" >
+      <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          
+        </div>
+        <div class="modal-body">
+          <form action="login.php" href="login.php" method="POST">
+            <div class="input-group">
+              <div class="input-group-addon">Usuario</div>
+              <input class="form-control" name="usuario" />
+            </div>
+            <br>
+
+            <div class="input-group">
+              <div class="input-group-addon">Contraseña</div>
+              <input class="form-control" type="password" name="pass" />
+            </div>
+            <br>
+            <button type="submit"  class="btn btn-primary">Ingresar</button>
+            
+          </form>
+        </div>
+      </div>
+        
+      </div>
+    </div>
 
     <footer>
     <div class="container">
@@ -81,6 +96,7 @@ $resultado=$mysqli->query($consulta);
               <a class="btn btn-primary">FACEBOOK</a>
               <a class="btn btn-primary">PROMOCIONES</a>
               <a class="btn btn-primary">CONTACTANOS</a>
+              <a class="btn btn-primary" href="#modal-usuario" data-toggle="modal">ADMIN</a>
             </div>
              <h3>© 2014 CAFÉ PAPA JAM PIZZA</h3>
             </div>
@@ -95,3 +111,4 @@ $resultado=$mysqli->query($consulta);
     
   </body>
 </html>
+
